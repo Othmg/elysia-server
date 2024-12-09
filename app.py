@@ -8,16 +8,13 @@ app = Flask(__name__)
 
 client = OpenAI()
 # Set your OpenAI API key
-client.api_key = os.environ.get(
-    "OPENAI_API_KEY",
-    "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",
-)
+client.api_key = os.environ.get("OPENAI_API_KEY", None)
 
 # Your previously created assistant ID
 # You must create an assistant resource before using it.
 # Example: assistant = openai.Assistant.create(name="My Assistant")
 # Then: assistant_id = assistant.id
-assistantID = os.environ.get("OPENAI_ASSISTANT_ID", "asst_a82qHkn4ki3mmmj5mAxPn8Yf")
+assistantID = os.environ.get("OPENAI_ASSISTANT_ID", None)
 
 
 # Pretty printing helper
